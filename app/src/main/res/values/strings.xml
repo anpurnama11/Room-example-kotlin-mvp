@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dapenduk</string>
+
+    <!--login-->
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_label">Login</string>
+    <string name="username_empty">Username cannot be empty</string>
+    <string name="password_empty">Password cannot be empty</string>
+    <string name="wrong_credentials">Username or password incorrect</string>
+</resources>
