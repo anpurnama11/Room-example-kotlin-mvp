@@ -7,10 +7,7 @@ class LoginPresenterImpl(val screen: LoginScreen,val repository: SessionReposito
     }
 
     override fun isLogin() {
-        if(!repository.getUsername().isBlank()) {
-            screen.displayDashboard()
-            screen.close()
-        }
+        if(!repository.getUsername().isBlank()) screen.displayDashboard()
     }
 
     override fun onLoginButtonTapped(username: String, password: String) {
