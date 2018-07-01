@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import com.dapenduk.dapenduk.R
+import com.dapenduk.dapenduk.dashboard.DashboardFragment
 import com.dapenduk.dapenduk.showSnackBar
 
 
@@ -53,7 +54,9 @@ class LoginFragment : Fragment(),LoginScreen {
     }
 
     override fun displayDashboard() {
-
+        activity?.let {
+            it.supportFragmentManager.beginTransaction().replace(R.id.containerView,DashboardFragment.newInstance()).commit()
+        }
     }
 
     companion object {

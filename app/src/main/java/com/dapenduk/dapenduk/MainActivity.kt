@@ -24,8 +24,9 @@ class MainActivity : AppCompatActivity() {
                 val pref = getSharedPreferences("session",android.content.Context.MODE_PRIVATE)
                 val repository = SessionRepository(pref)
                 if(repository.getUsername().isBlank()) {
-                    val presenterLogin = LoginPresenterImpl(LoginFragment.newInstance(),repository)
-                    replaceFragmentInActivity(LoginFragment.newInstance(),R.id.containerView)
+                    val loginFragment = LoginFragment.newInstance()
+                    val presenterLogin = LoginPresenterImpl(loginFragment,repository)
+                    replaceFragmentInActivity(loginFragment,R.id.containerView)
                 }
                 return@OnNavigationItemSelectedListener true
             }
