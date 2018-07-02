@@ -7,6 +7,9 @@ import android.arch.persistence.room.*
     @Query("select * from Dapenduk")
     fun getDatas(): List<Dapenduk>
 
+    @Query("select * from Dapenduk where id = :id")
+    fun getDataById(id: String): Dapenduk
+
     @Query("select * from Dapenduk where name = :name ")
     fun getDataByName(name: String):Dapenduk
 

@@ -4,6 +4,7 @@
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_dashboard">Dashboard</string>
+    <string name="empty_label">Empty</string>
 
     <!--login-->
     <string name="username_hint">Username</string>
@@ -29,4 +30,5 @@
     <string name="add_job_hint">Occupation</string>
     <string name="add_button_label">Add to Dapenduk</string>
     <string name="hello_blank_fragment">hello</string>
+
 </resources>
