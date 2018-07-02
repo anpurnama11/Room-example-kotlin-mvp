@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import com.dapenduk.dapenduk.MainActivity
 import com.dapenduk.dapenduk.R
 import com.dapenduk.dapenduk.dashboard.DashboardFragment
 import com.dapenduk.dapenduk.showSnackBar
@@ -55,7 +56,10 @@ class LoginFragment : Fragment(),LoginScreen {
 
     override fun displayDashboard() {
         activity?.let {
-            it.supportFragmentManager.beginTransaction().replace(R.id.containerView,DashboardFragment.newInstance()).commit()
+            val dashboardFragment = DashboardFragment.newInstance()
+            (it as MainActivity).providePresenterDashboard(dashboardFragment)
+            it.supportFragmentManager?.beginTransaction()
+                    ?.replace(R.id.containerView,dashboardFragment)?.commit()
         }
     }
 

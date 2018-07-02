@@ -7,13 +7,13 @@
     tools:context=".dashboard.DashboardFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/addLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/add_data_label"
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,20 +25,44 @@
         android:layout_height="1dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/addLabel" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/editLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:layout_marginTop="16dp"
+        android:text="@string/edit_data_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLabel" />
+
+    <TextView
+        android:id="@+id/deleteLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/delete_data_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 
 </android.support.constraint.ConstraintLayout>
