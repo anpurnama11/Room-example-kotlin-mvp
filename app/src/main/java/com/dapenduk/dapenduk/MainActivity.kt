@@ -2,7 +2,6 @@ package com.dapenduk.dapenduk
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.dapenduk.dapenduk.dashboard.DashboardFragment
 import com.dapenduk.dapenduk.dashboard.DashboardPresenterImpl
@@ -11,11 +10,9 @@ import com.dapenduk.dapenduk.home.HomeFragment
 import com.dapenduk.dapenduk.login.LoginFragment
 import com.dapenduk.dapenduk.login.LoginPresenterImpl
 import com.dapenduk.dapenduk.login.LoginScreen
-import com.dapenduk.dapenduk.login.SessionRepository
+import com.dapenduk.dapenduk.data.SessionRepository
 import com.dapenduk.dapenduk.search.SearchFragment
-import com.dapenduk.dapenduk.util.addFragmentToActivity
 import com.dapenduk.dapenduk.util.replaceFragmentInActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
-    private fun providePresenterLogin(screen: LoginScreen,repository:SessionRepository) {
+    private fun providePresenterLogin(screen: LoginScreen,repository: SessionRepository) {
         presenterLogin = LoginPresenterImpl(screen,repository)
     }
 

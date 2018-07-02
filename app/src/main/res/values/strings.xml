@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Dapenduk</string>
 
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_dashboard">Dashboard</string>
+
     <!--login-->
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
@@ -14,10 +18,15 @@
     <string name="edit_data_label">Edit data</string>
     <string name="delete_data_label">Delete data</string>
 
-    <string name="title_home">Home</string>
-    <string name="title_search">Search</string>
-    <string name="title_dashboard">Dashboard</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- add -->
+    <string name="add_name_hint">Full name</string>
+    <string name="add_gender_label">Sex</string>
+    <string name="man_choice_label">Men</string>
+    <string name="women_choice_label">Women</string>
+    <string name="add_address_hint">Address</string>
+    <string name="add_place_of_birth_hint">Place of birth</string>
+    <string name="add_date_of_birth_hint">Date of birth</string>
+    <string name="add_job_hint">Occupation</string>
+    <string name="add_button_label">Add to Dapenduk</string>
+    <string name="hello_blank_fragment">hello</string>
 </resources>

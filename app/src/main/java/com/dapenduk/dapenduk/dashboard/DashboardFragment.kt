@@ -1,6 +1,7 @@
 package com.dapenduk.dapenduk.dashboard
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.TextView
 import com.dapenduk.dapenduk.MainActivity
 
 import com.dapenduk.dapenduk.R
+import com.dapenduk.dapenduk.add.AddDataActivity
 
 class DashboardFragment : Fragment(),DashboardScreen {
 
@@ -43,6 +45,8 @@ class DashboardFragment : Fragment(),DashboardScreen {
     }
 
     override fun showAddForm() {
+        val i = Intent(activity,AddDataActivity::class.java)
+        startActivity(i)
 
     }
 
@@ -50,6 +54,10 @@ class DashboardFragment : Fragment(),DashboardScreen {
         activity?.let {
             (it as MainActivity).navigation.selectedItemId = R.id.navigation_search
         }
+    }
+
+    override fun show(message: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 

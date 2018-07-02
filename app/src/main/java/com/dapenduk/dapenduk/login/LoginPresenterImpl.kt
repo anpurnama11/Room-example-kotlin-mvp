@@ -1,5 +1,7 @@
 package com.dapenduk.dapenduk.login
 
+import com.dapenduk.dapenduk.data.SessionRepository
+
 class LoginPresenterImpl(val screen: LoginScreen,val repository: SessionRepository): LoginPresenter {
 
     init {
