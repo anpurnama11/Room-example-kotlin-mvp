@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
                 val homeFragment = HomeFragment.newInstance()
                 providePresenterHome(homeFragment)
                 replaceFragmentInActivity(homeFragment,R.id.containerView)
-                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
                 preferences = getSharedPreferences("session",android.content.Context.MODE_PRIVATE)
@@ -53,11 +52,9 @@ class MainActivity : AppCompatActivity() {
                     providePresenterDashboard(dashboardFragment)
                     replaceFragmentInActivity(dashboardFragment,R.id.containerView)
                 }
-                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_search -> {
                 replaceFragmentInActivity(SearchFragment.newInstance(),R.id.containerView)
-                return@OnNavigationItemSelectedListener true
             }
         }
         false
