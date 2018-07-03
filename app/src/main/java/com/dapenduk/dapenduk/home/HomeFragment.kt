@@ -1,6 +1,7 @@
 package com.dapenduk.dapenduk.home
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
@@ -15,9 +16,10 @@ import com.dapenduk.dapenduk.R
 import com.dapenduk.dapenduk.data.Dapenduk
 import com.dapenduk.dapenduk.data.DapendukDatabase
 import com.dapenduk.dapenduk.data.DapendukRepository
+import com.dapenduk.dapenduk.detail.DetailActivity
 import com.dapenduk.dapenduk.util.AppExecutors
 
-class HomeFragment : Fragment(),HomeScreen {
+class HomeFragment : Fragment(),HomeScreen,DataAdapter.DataAdapterListener {
     lateinit var emptyLabel: TextView
     lateinit var rvData: RecyclerView
 
@@ -35,24 +37,35 @@ class HomeFragment : Fragment(),HomeScreen {
             rvData.layoutManager = layoutManager
             rvData.addItemDecoration(DividerItemDecoration(activity,DividerItemDecoration.VERTICAL))
         }
-        presenter.loadDatas()
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.loadDatas()
     }
 
     override fun bind(datas: List<Dapenduk>) {
         emptyLabel.visibility = View.GONE
-        val adapter = DataAdapter(datas)
+        val adapter = DataAdapter(datas,this)
         rvData.adapter = adapter
         rvData.visibility = View.VISIBLE
     }
 
     override fun showDetail(id: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val i = Intent(activity,DetailActivity::class.java).apply {
+            putExtra("id",id)
+        }
+        startActivity(i)
     }
 
     override fun show(message: String) {
         if (message=="empty")
             emptyLabel.visibility = View.VISIBLE
+    }
+
+    override fun onDataTapped(data: Dapenduk) {
+        presenter.onDataClicked(data.id)
     }
 
 

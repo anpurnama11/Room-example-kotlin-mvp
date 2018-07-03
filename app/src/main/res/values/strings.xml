@@ -38,5 +38,13 @@
     <string name="add_date_of_birth_empty_warning">Date of birth cannot be empty</string>
     <string name="add_success_message">Successfully inserted</string>
 
+    <!-- detail -->
+    <string name="detail_address_label">Address</string>
+    <string name="detail_place_of_birth_label">Place of birth</string>
+    <string name="detail_date_of_birth_label">Date of birth</string>
+    <string name="detail_occupation_label">Occupation</string>
+    <string name="detail_edit_button_label">Edit</string>
+    <string name="detail_delete_button_label">Delete</string>
+
     <string name="hello_blank_fragment">hello</string>
 </resources>

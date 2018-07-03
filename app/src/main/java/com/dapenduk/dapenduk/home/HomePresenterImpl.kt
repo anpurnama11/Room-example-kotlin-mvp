@@ -3,14 +3,14 @@ package com.dapenduk.dapenduk.home
 import com.dapenduk.dapenduk.data.Dapenduk
 import com.dapenduk.dapenduk.data.DapendukRepository
 
-class HomePresenterImpl(val screen: HomeScreen,val repository: DapendukRepository):HomePresenter {
+class HomePresenterImpl(val screen: HomeScreen,private val repository: DapendukRepository):HomePresenter {
 
     init {
         screen.presenter = this
     }
 
     override fun loadDatas() {
-        repository.getDatas(object : DapendukRepository.DapendukRepositoryListener.getDatasListener {
+        repository.getDatas(object : DapendukRepository.DapendukRepositoryListener.GetDatasListener {
             override fun onDatasAvailable(datas: List<Dapenduk>) {
                 screen.bind(datas)
             }
@@ -23,6 +23,6 @@ class HomePresenterImpl(val screen: HomeScreen,val repository: DapendukRepositor
     }
 
     override fun onDataClicked(id: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        screen.showDetail(id)
     }
 }

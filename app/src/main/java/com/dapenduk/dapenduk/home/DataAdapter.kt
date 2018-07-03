@@ -9,7 +9,7 @@ import com.dapenduk.dapenduk.R
 import com.dapenduk.dapenduk.data.Dapenduk
 import kotlinx.android.synthetic.main.item_data.view.*
 
-class DataAdapter(val datas: List<Dapenduk>): RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
+class DataAdapter(private val datas: List<Dapenduk>,val listener: DataAdapterListener): RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_data,parent,false)
@@ -22,8 +22,13 @@ class DataAdapter(val datas: List<Dapenduk>): RecyclerView.Adapter<DataAdapter.D
         holder.bindTo(datas[position])
     }
 
-
     inner class DataViewHolder(val view:View): RecyclerView.ViewHolder(view) {
+
+        init {
+            view.container.setOnClickListener {
+                listener.onDataTapped(datas[adapterPosition])
+            }
+        }
 
         private val nameLabel: TextView by lazy {
             view.name
@@ -38,4 +43,9 @@ class DataAdapter(val datas: List<Dapenduk>): RecyclerView.Adapter<DataAdapter.D
             addressLabel.text = data.address
         }
     }
+
+    interface DataAdapterListener {
+        fun onDataTapped(data: Dapenduk)
+    }
+
 }
