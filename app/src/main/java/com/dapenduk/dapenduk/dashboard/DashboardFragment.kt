@@ -18,6 +18,7 @@ class DashboardFragment : Fragment(),DashboardScreen {
     lateinit var addLabel: TextView
     lateinit var editLabel: TextView
     lateinit var deleteLabel: TextView
+    lateinit var logoutLabel: TextView
 
     override lateinit var presenter: DashboardPresenter
 
@@ -40,6 +41,10 @@ class DashboardFragment : Fragment(),DashboardScreen {
             deleteLabel.setOnClickListener {
                 presenter.onTextviewTapped("delete")
             }
+            logoutLabel = findViewById(R.id.logoutLabel)
+            logoutLabel.setOnClickListener {
+                presenter.onTextviewTapped("logout")
+            }
         }
         return root
     }
@@ -53,6 +58,13 @@ class DashboardFragment : Fragment(),DashboardScreen {
     override fun showSearchTab() {
         activity?.let {
             (it as MainActivity).navigation.selectedItemId = R.id.navigation_search
+        }
+    }
+
+    override fun logout() {
+        activity?.let {
+            (it as MainActivity).preferences.edit().clear().apply()
+            (it as MainActivity).navigation.selectedItemId = R.id.navigation_home
         }
     }
 

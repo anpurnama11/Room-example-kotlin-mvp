@@ -10,6 +10,7 @@ class DashboardPresenterImpl(var screen: DashboardScreen): DashboardPresenter {
         when(title.toLowerCase()) {
             "add" -> screen.showAddForm()
             "edit","delete" -> screen.showSearchTab()
+            "logout" -> screen.logout()
         }
     }
 }

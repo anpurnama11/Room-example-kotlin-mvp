@@ -20,6 +20,7 @@
     <string name="add_data_label">Add data</string>
     <string name="edit_data_label">Edit data</string>
     <string name="delete_data_label">Delete data</string>
+    <string name="logout_label">Logout</string>
 
     <!-- add -->
     <string name="add_name_hint">Full name</string>

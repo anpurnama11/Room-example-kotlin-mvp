@@ -1,5 +1,6 @@
 package com.dapenduk.dapenduk
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var presenterHome:HomePresenterImpl
     lateinit var presenterLogin: LoginPresenterImpl
     lateinit var presenterDashboard: DashboardPresenterImpl
+    lateinit var preferences: SharedPreferences
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -37,8 +39,8 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                val pref = getSharedPreferences("session",android.content.Context.MODE_PRIVATE)
-                val repository = SessionRepository(pref)
+                preferences = getSharedPreferences("session",android.content.Context.MODE_PRIVATE)
+                val repository = SessionRepository(preferences)
                 if(repository.getUsername().isBlank()) {
                     val loginFragment = LoginFragment.newInstance()
                     providePresenterLogin(loginFragment,repository)
@@ -82,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         presenterDashboard = DashboardPresenterImpl(screen)
     }
 
-    fun providePresenterHome(screen: HomeScreen) {
+    private fun providePresenterHome(screen: HomeScreen) {
         val database = DapendukDatabase.getInstance(applicationContext)
         val repository = DapendukRepository(AppExecutors(),database.dapendukDAO())
         presenterHome = HomePresenterImpl(screen,repository)
