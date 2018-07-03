@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dapenduk</string>
+    <string name="app_name">Room Example</string>
     <string name="title_add">Add Data</string>
     <string name="title_detail">Detail</string>
 
@@ -31,7 +31,7 @@
     <string name="add_place_of_birth_hint">Place of birth</string>
     <string name="add_date_of_birth_hint">Date of birth</string>
     <string name="add_job_hint">Occupation</string>
-    <string name="add_button_label">Add to Dapenduk</string>
+    <string name="add_button_label">Add</string>
     <string name="add_name_empty_warning">Name cannot be empty</string>
     <string name="add_address_empty_warning">Address cannot be empty</string>
     <string name="add_place_of_birth_empty_warning">Place of birth cannot be empty</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dapenduk.dapenduk">
+    package="com.example.room">
 
     <application
         android:allowBackup="true"
@@ -19,9 +19,9 @@
         <activity
             android:name=".add.AddDataActivity"
             android:label="Add Data"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.room.MainActivity" />
         <activity android:name=".detail.DetailActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName="com.example.room.MainActivity"/>
     </application>
 
 </manifest>
