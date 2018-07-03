@@ -10,6 +10,7 @@ import com.dapenduk.dapenduk.data.DapendukDatabase
 import com.dapenduk.dapenduk.data.DapendukRepository
 import com.dapenduk.dapenduk.showSnackBar
 import com.dapenduk.dapenduk.util.AppExecutors
+import com.dapenduk.dapenduk.util.setupActionBar
 import kotlinx.android.synthetic.main.activity_add_data.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -21,6 +22,11 @@ class AddDataActivity : AppCompatActivity(),AddDataScreen {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_data)
+
+        setupActionBar(R.id.toolbar) {
+            title = getString(R.string.title_add)
+            setDisplayHomeAsUpEnabled(true)
+        }
 
         val database = DapendukDatabase.getInstance(applicationContext)
         val repository = DapendukRepository(AppExecutors(),database.dapendukDAO())

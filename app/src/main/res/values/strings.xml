@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Dapenduk</string>
+    <string name="title_add">Add Data</string>
+    <string name="title_detail">Detail</string>
 
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
