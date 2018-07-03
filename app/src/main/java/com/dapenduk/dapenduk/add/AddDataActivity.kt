@@ -64,8 +64,13 @@ class AddDataActivity : AppCompatActivity(),AddDataScreen {
     }
 
     override fun show(message: String) {
-        var text = message
-        container.showSnackBar(text, Snackbar.LENGTH_LONG)
+        when(message) {
+            "name" -> container.showSnackBar(getString(R.string.add_name_empty_warning), Snackbar.LENGTH_LONG)
+            "address" -> container.showSnackBar(getString(R.string.add_address_empty_warning),Snackbar.LENGTH_LONG)
+            "pob" -> container.showSnackBar(getString(R.string.add_place_of_birth_empty_warning),Snackbar.LENGTH_LONG)
+            "dob" -> container.showSnackBar(getString(R.string.add_date_of_birth_empty_warning),Snackbar.LENGTH_LONG)
+            "success" -> container.showSnackBar(getString(R.string.add_success_message), Snackbar.LENGTH_LONG)
+        }
     }
 
 }

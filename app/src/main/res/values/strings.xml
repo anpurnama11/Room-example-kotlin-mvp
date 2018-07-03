@@ -32,6 +32,11 @@
     <string name="add_date_of_birth_hint">Date of birth</string>
     <string name="add_job_hint">Occupation</string>
     <string name="add_button_label">Add to Dapenduk</string>
-    <string name="hello_blank_fragment">hello</string>
+    <string name="add_name_empty_warning">Name cannot be empty</string>
+    <string name="add_address_empty_warning">Address cannot be empty</string>
+    <string name="add_place_of_birth_empty_warning">Place of birth cannot be empty</string>
+    <string name="add_date_of_birth_empty_warning">Date of birth cannot be empty</string>
+    <string name="add_success_message">Successfully inserted</string>
 
+    <string name="hello_blank_fragment">hello</string>
 </resources>
